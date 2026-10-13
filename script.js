@@ -1,47 +1,10 @@
 (() => {
   const html = document.documentElement;
-  const langBtn = document.getElementById("language-switch");
-  const title = document.querySelector("title");
-  const description = document.querySelector('meta[name="description"]');
   const coffeeToggle = document.getElementById("coffee-toggle");
   const heroCoffee = document.getElementById("hero-coffee");
   const contactPopup = document.getElementById("contact-popup");
   const contactClose = document.getElementById("close-contact-popup");
   const lightbox = document.getElementById("lightbox");
-
-  function setLanguage(lang) {
-    const rtl = lang === "fa";
-    html.lang = rtl ? "fa" : "en";
-    html.dir = rtl ? "rtl" : "ltr";
-    document.querySelectorAll("[data-en][data-fa]").forEach((el) => {
-      if (el.children.length) return;
-      const next = rtl ? el.getAttribute("data-fa") : el.getAttribute("data-en");
-      if (next != null) el.textContent = next;
-    });
-    if (langBtn) {
-      const glyph = langBtn.querySelector(".lang-glyph");
-      if (glyph) {
-        glyph.textContent = rtl ? "EN" : "فا";
-        glyph.classList.toggle("lang-fa-glyph", !rtl);
-      }
-      langBtn.setAttribute("aria-label", rtl ? "Switch to English" : "تغییر زبان به فارسی");
-    }
-    if (title) {
-      title.textContent = rtl ? "مریم حجتی — رشد، تحلیل و کنجکاوی" : "Maryam Hojati — Growth, Analytics & Curiosity";
-    }
-    if (description) {
-      description.setAttribute(
-        "content",
-        rtl
-          ? "مریم حجتی؛ رشد، تحلیل، مسئله‌های کسب‌وکار و چیزهایی که ارزش نگاه کردن دارند."
-          : "Maryam Hojati — growth, analytics, business problems, and things worth exploring."
-      );
-    }
-  }
-
-  if (langBtn) {
-    langBtn.addEventListener("click", () => setLanguage(html.lang === "fa" ? "en" : "fa"));
-  }
 
   if (contactPopup) {
     const openers = [coffeeToggle, heroCoffee].filter(Boolean);
