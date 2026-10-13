@@ -401,6 +401,23 @@ html[dir="rtl"] .contact-pop.side-above::after { left: auto; right: 28px; }
 .work-grid .brand { font-weight: 700; color: var(--ink); letter-spacing: 0.01em; }
 .work-grid h3 { font-size: 18px; margin: 0 0 10px; }
 .work-grid p { margin: 0; color: #535c56; font-size: 14px; }
+.work-resume-note {
+  margin: 22px 0 0;
+  max-width: 560px;
+  font-size: 14px;
+  color: #535c56;
+}
+.inline-copy {
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.inline-copy:hover { color: var(--orange); }
 
 .notes-section { padding-top: 40px; padding-bottom: 64px; border-top: 1px solid var(--line); }
 .writing-intro { max-width: 640px; color: var(--muted); font-size: 16px; margin: 18px 0 8px; }
